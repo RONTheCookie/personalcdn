@@ -7,3 +7,4 @@ app.get("/", (req, res)=>{
     console.log(req.ip);
 });
 app.use(fileUpload({safeFileNames:true, preserveExtension:true}));
+app.listen(80);
