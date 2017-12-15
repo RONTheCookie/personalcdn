@@ -7,4 +7,4 @@ app.get("/", (req, res)=>{
     res.send("hello!");
 });
 app.use(fileUpload({safeFileNames:true, preserveExtension:true}));
-app.listen(80);
+app.listen(8080);
