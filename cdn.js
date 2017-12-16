@@ -21,10 +21,11 @@ app.use(express.static("data"));
 app.post("/upload/:token", (req, res) => {
     let token = sha512(req.params.token).toString("hex");
     let issue = null;
+    console.log(typeof req.files);
     if (hash == token) {
-        // if (req.files == null) return res.send("no files");
+        if (req.files == null) return res.send("no files");
         let uploadedAmount = 0;
-        for (let k of Object.keys(req.files)) {
+        for (let k of req.files) {
             let v = req.files[k];
             let rdm = randomstring.generate(7);
             let ext = mime.extension(v.mimetype);
