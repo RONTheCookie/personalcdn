@@ -7,10 +7,10 @@ const app = express();
 const fs = require("fs");
 const randomstring = require("randomstring");
 const mime = require("mime-types");
-const hashes = (/**
+const hash = (/**
     * Just a tiny trick for IntelliSense to work properly.
-    * @returns {Array<String>}
-    */()=>{return require("./hashes.json");})();
+    * @returns {String}
+    */()=>{return require("./hash.json");})();
 const sha512 = require("sha512");
 const fileUpload = require("express-fileupload");
 try {fs.mkdirSync("data");}catch(error){}
@@ -21,8 +21,7 @@ app.use(express.static("data"));
 app.post("/upload/:token", (req, res) => {
     let token = sha512(req.params.token);
     let issue = null;
-    console.log(hashes.indexOf(token));
-    if (hashes.indexOf(token) != -1) {
+    if (hash == token) {
         if (req.files == null) return res.send("no files");
         let uploadedAmount = 0;
         for (let k of Object.keys(req.files)) {
