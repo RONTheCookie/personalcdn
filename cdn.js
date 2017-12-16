@@ -19,9 +19,8 @@ app.get("/", (req, res)=>{
 });
 app.use(express.static("data"));
 app.post("/upload/:token", (req, res) => {
-    let token = sha512(req.params.token);
+    let token = sha512(req.params.token).toString("hex");
     let issue = null;
-    console.log(hash, token, hash==token);
     if (hash == token) {
         if (req.files == null) return res.send("no files");
         let uploadedAmount = 0;
