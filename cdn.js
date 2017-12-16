@@ -22,7 +22,7 @@ app.post("/upload/:token", (req, res) => {
     let token = sha512(req.params.token).toString("hex");
     let issue = null;
     if (hash == token) {
-        if (req.files == null) return res.send("no files");
+        // if (req.files == null) return res.send("no files");
         let uploadedAmount = 0;
         for (let k of Object.keys(req.files)) {
             let v = req.files[k];
