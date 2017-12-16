@@ -21,6 +21,7 @@ app.use(express.static("data"));
 app.post("/upload/:token", (req, res) => {
     let token = sha512(req.params.token);
     let issue = null;
+    console.log(hashes.indexOf(token));
     if (hashes.indexOf(token) != -1) {
         if (req.files == null) return res.send("no files");
         let uploadedAmount = 0;
