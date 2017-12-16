@@ -18,6 +18,7 @@ app.get("/", (req, res)=>{
     res.send("Ron's personal CDN.");
 });
 app.use(express.static("data"));
+app.use(fileUpload({preserveExtension: true, safeFileNames: true}))
 app.post("/upload/:token", (req, res) => {
     let token = sha512(req.params.token).toString("hex");
     let issue = null;
