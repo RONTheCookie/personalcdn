@@ -17,6 +17,7 @@ try {fs.mkdirSync("data");}catch(error){}
 app.get("/", (req, res)=>{
     res.send("Ron's personal CDN.");
 });
+app.use(express.static("data"));
 app.post("/upload/:token", (req, res) => {
     let token = sha512(req.params.token);
     let issue = null;
