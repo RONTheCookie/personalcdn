@@ -4,6 +4,7 @@
 */
 const express = require("express");
 const app = express();
+app.disable("x-powered-by");
 const fs = require("fs");
 const randomstring = require("randomstring");
 const mime = require("mime-types");
@@ -15,7 +16,7 @@ const sha512 = require("sha512");
 const fileUpload = require("express-fileupload");
 try {fs.mkdirSync("data");}catch(error){}
 app.get("/", (req, res)=>{
-    res.send("Ron's personal CDN.");
+    res.send("CDN.");
 });
 app.use(express.static("data"));
 app.use(fileUpload({preserveExtension: true, safeFileNames: true}))
