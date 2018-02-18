@@ -40,4 +40,4 @@ app.post("/upload/:token", (req, res) => {
     }
 });
 app.use(fileUpload({safeFileNames:true, preserveExtension:true}));
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
