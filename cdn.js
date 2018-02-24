@@ -16,7 +16,7 @@ const sha512 = require("sha512");
 const fileUpload = require("express-fileupload");
 try {fs.mkdirSync("data");}catch(error){}
 app.get("/", (req, res)=>{
-    res.send("CDN.");
+    res.redirect("https://ronthecookie.me");
 });
 app.use(express.static("data"));
 app.use(fileUpload({preserveExtension: true, safeFileNames: true}))
