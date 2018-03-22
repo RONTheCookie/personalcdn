@@ -4,7 +4,7 @@
 */
 const express = require("express");
 const app = express();
-app.disable("x-powered-by");
+app.use(require("helmet")());
 const fs = require("fs");
 const randomstring = require("randomstring");
 const mime = require("mime-types");
