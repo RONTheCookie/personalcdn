@@ -18,7 +18,11 @@ const creds = (process.env.CDN_CREDS || "")
 		return { folder, secret };
 	});
 
-app.use(helmet());
+app.use(
+	helmet({
+		contentSecurityPolicy: false,
+	}	)
+);
 app.use(express.static("data"));
 app.use(fileUpload({ preserveExtension: true, safeFileNames: true }));
 
