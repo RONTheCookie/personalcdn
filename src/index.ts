@@ -21,7 +21,7 @@ const creds = (process.env.CDN_CREDS || "")
 app.use(
 	helmet({
 		contentSecurityPolicy: false,
-	}	)
+	})
 );
 app.use(express.static("data"));
 app.use(fileUpload({ preserveExtension: true, safeFileNames: true }));
