@@ -1,5 +1,5 @@
 # personalcdn
-Just another CDN.
+Just another ~~CDN~~ file uploader.
 
 # Docker
 ~~Docker Compose Example:~~ **This is outdated**
