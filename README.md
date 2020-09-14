@@ -2,7 +2,7 @@
 Just another CDN.
 
 # Docker
-Docker Compose Example:
+~~Docker Compose Example:~~ **This is outdated**
 ```yaml
 version: 3
 services:
